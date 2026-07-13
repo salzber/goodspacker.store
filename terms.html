@@ -1,106 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | GoodsPacker Logistics</title>
+    <title>Terms of Service | GoodsPacker</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            padding: 50px 20px;
-            color: #444;
-            background-color: #f4f7f6;
-            max-width: 850px;
-            margin: 0 auto;
+        :root {
+            --primary: #1A237E;
+            --accent: #FF7043;
+            --text-dark: #2C3E50;
+            --text-light: #606F7B;
+            --bg-page: #F4F7F6;
+            --white: #FFFFFF;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        .content-box {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-top: 5px solid #0056b3;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+        body { background-color: var(--bg-page); color: var(--text-dark); line-height: 1.8; padding: 60px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        
+        .back-link { display: inline-flex; align-items: center; margin-bottom: 25px; text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 15px; transition: color 0.3s ease; }
+        .back-link:hover { color: var(--accent); }
 
-        h1 {
-            color: #0056b3;
-            font-size: 32px;
-            margin-bottom: 5px;
-        }
+        .policy-card { background-color: var(--white); padding: 50px 60px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border-top: 6px solid var(--primary); }
+        .header-section { margin-bottom: 40px; border-bottom: 1px solid #EAEAEA; padding-bottom: 20px; }
+        h1 { color: var(--primary); font-size: 34px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .last-updated { font-size: 14px; color: var(--text-light); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
 
-        h2 {
-            margin-top: 30px;
-            color: #111;
-            font-size: 20px;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
+        h2 { margin-top: 40px; color: var(--primary); font-size: 22px; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        h2::before { content: ''; display: block; width: 8px; height: 8px; background-color: var(--accent); border-radius: 50%; }
+        p, ul { margin-bottom: 18px; font-size: 16px; color: var(--text-dark); }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--primary); font-weight: 700; }
 
-        p {
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
+        .footer-note { margin-top: 60px; font-size: 14px; color: var(--text-light); text-align: center; background: #F8F9FC; padding: 20px; border-radius: 8px; }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            margin-bottom: 25px;
-            text-decoration: none;
-            color: #0056b3;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #ff5722;
-        }
-
-        .last-updated {
-            font-size: 14px;
-            color: #888;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .footer-note {
-            margin-top: 50px;
-            font-size: 13px;
-            color: #777;
-            text-align: center;
-            border-top: 1px solid #eaeaea;
-            padding-top: 20px;
-        }
+        @media (max-width: 600px) { .policy-card { padding: 30px 20px; } h1 { font-size: 28px; } }
     </style>
 </head>
-
 <body>
-    
-    <a href="index.html" class="back-link">← Return to Homepage</a>
-    
-    <div class="content-box">
-        <h1>Terms & Conditions</h1>
-        <p class="last-updated">Last Updated: July 2026</p>
-        
-        <p>Welcome to <strong>GoodsPacker Logistics</strong>. By engaging with our digital platform and utilizing our logistics services, you acknowledge, understand, and agree to be legally bound by the following terms of service.</p>
+    <div class="container">
+        <a href="index.html" class="back-link">← Return to Homepage</a>
+        <div class="policy-card">
+            <div class="header-section">
+                <h1>Terms of Service</h1>
+                <p class="last-updated">Effective Date: July 13, 2026</p>
+            </div>
+            
+            <p>Welcome to <strong>GoodsPacker</strong>. By accessing our website or utilizing our packing and moving services, you agree to be bound by the following terms and conditions. Please read them carefully.</p>
 
-        <h2>1. Scope of Services</h2>
-        <p>GoodsPacker Logistics acts as a premium logistics provider, offering comprehensive end-to-end packing, secure transit, loading, transportation, and unpacking solutions tailored for both residential households and corporate enterprises.</p>
+            <h2>1. Service Agreement</h2>
+            <p>GoodsPacker agrees to provide professional packing, loading, transportation, and unloading services as outlined in your finalized quotation. The estimate is based on the inventory provided by you. If the actual inventory exceeds the estimated volume on the day of the move, additional charges will apply accordingly.</p>
 
-        <h2>2. Quotations and Billing</h2>
-        <p>The initial cost estimates generated through our online portal are provisional. A finalized, binding quotation will be issued solely after a thorough digital or in-person inventory assessment by our representatives. All outstanding balances must be settled in accordance with the agreed payment schedule prior to the final unloading of goods at the destination.</p>
+            <h2>2. Booking & Cancellations</h2>
+            <ul>
+                <li><strong>Booking Confirmation:</strong> A nominal token advance is required to lock in your moving date and secure a vehicle.</li>
+                <li><strong>Cancellations:</strong> Cancellations made up to 48 hours before the scheduled move will receive a full refund of the token advance. Cancellations within 48 hours may be subject to a 15% cancellation fee to cover logistical setup costs.</li>
+            </ul>
 
-        <h2>3. Prohibited Cargo</h2>
-        <p>For safety and legal compliance, GoodsPacker Logistics strictly prohibits the transportation of hazardous materials, explosives, highly flammable liquids, illegal substances, firearms, and perishable goods. Clients bear full responsibility for ensuring their consignments entirely exclude these restricted items prior to packing.</p>
+            <h2>3. Client Responsibilities</h2>
+            <p>While we handle the heavy lifting, clients are expected to:</p>
+            <ul>
+                <li>Safeguard personal valuables such as jewelry, cash, laptops, and important documents. GoodsPacker is not liable for the transport of these specific items.</li>
+                <li>Ensure proper authorization and gate passes are arranged with society/building management at both the pickup and drop-off locations prior to our crew's arrival.</li>
+            </ul>
 
-        <h2>4. Limitation of Liability</h2>
-        <p>Our expert team exercises the highest level of diligence and professional care when handling your assets. However, GoodsPacker Logistics shall not be held liable for damages resulting from 'Acts of God' (force majeure), uncontrollable natural disasters, or unavoidable highway collisions. Any such unfortunate incidents will be exclusively addressed and settled through the active transit insurance policy opted for by the client.</p>
+            <h2>4. Liability & Transit Insurance</h2>
+            <p>We strongly recommend opting for our comprehensive transit insurance. In the absence of insurance, GoodsPacker's liability for damaged or lost goods is limited to basic coverage as mandated by logistics laws. Claims must be filed within 72 hours of delivery.</p>
 
-        <p class="footer-note">© 2026 GoodsPacker Logistics Logistics Pvt. Ltd. All rights reserved.</p>
+            <div class="footer-note">
+                © 2026 GoodsPacker Logistics Pvt. Ltd. All rights reserved.
+            </div>
+        </div>
     </div>
-
 </body>
-
 </html>

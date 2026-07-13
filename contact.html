@@ -1,150 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | GoodsPacker Logistics</title>
+    <title>Contact GoodsPacker | 24/7 Logistics Support</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            padding: 50px 20px;
-            color: #444;
-            background-color: #f4f7f6;
+        /* Modern Reset & Variables */
+        :root {
+            --primary: #1A237E; /* Deep Navy */
+            --accent: #FF7043; /* Coral */
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-page: #F4F7F6;
+            --white: #FFFFFF;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            line-height: 1.6;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 40px 20px;
         }
 
-        .contact-card {
-            background-color: #ffffff;
+        /* Main Container */
+        .contact-wrapper {
+            background-color: var(--white);
             width: 100%;
-            max-width: 750px;
+            max-width: 1000px;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* Left Side: Contact Info (Dark Theme) */
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary) 0%, #121858 100%);
+            color: var(--white);
             padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-top: 5px solid #0056b3;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        h1 {
-            color: #0056b3;
-            font-size: 36px;
-            margin-bottom: 10px;
+        .brand-logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin-bottom: 30px;
         }
 
-        .subtitle {
-            color: #666;
-            font-size: 16px;
+        .brand-logo span {
+            color: var(--accent);
+        }
+
+        .info-header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .info-header p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 40px;
-            border-bottom: 1px solid #eaeaea;
-            padding-bottom: 20px;
+            line-height: 1.8;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
+        .info-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
-        @media (max-width: 600px) {
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-card {
-                padding: 30px;
-            }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
         }
 
-        .info-block {
-            background: #fdfdfd;
-            border: 1px solid #f0f0f0;
-            padding: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .info-block:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .info-block strong {
-            color: #111;
-            display: block;
-            margin-bottom: 8px;
-            font-size: 17px;
+        .icon {
+            font-size: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            color: var(--accent);
         }
 
-        .info-block p {
-            margin: 0;
-            font-size: 15px;
-            color: #555;
-        }
-
-        .btn-wrapper {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .back-btn {
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-            background: #0056b3;
-            padding: 14px 35px;
-            border-radius: 30px;
+        .text-wrap h4 {
             font-size: 16px;
-            font-weight: bold;
-            transition: background 0.3s ease, transform 0.2s ease;
+            margin-bottom: 5px;
+            font-weight: 600;
         }
 
-        .back-btn:hover {
-            background: #004494;
+        .text-wrap p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Right Side: Contact Form (Light Theme) */
+        .contact-form-section {
+            padding: 50px;
+            width: 55%;
+            background: var(--white);
+        }
+
+        .contact-form-section h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            background: #FAFAFA;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            background: var(--white);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 16px 30px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #121858;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.2);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            .contact-wrapper {
+                flex-direction: column;
+            }
+            .contact-info, .contact-form-section {
+                width: 100%;
+                padding: 40px 30px;
+            }
+            .info-details {
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
-
 <body>
 
-    <div class="contact-card">
-        <h1>We're Here to Help.</h1>
-        <p class="subtitle">Planning a move or need assistance with an ongoing relocation? Our dedicated support team is just a call or email away. We aim to respond to all inquiries within 60 minutes.</p>
+    <div class="contact-wrapper">
         
-        <div class="info-grid">
-            <div class="info-block">
-                <strong>📍 Corporate Headquarters</strong>
-                <p>GoodsPacker Logistics Pvt. Ltd.<br>70 Washington Square South, <br> York, NY 10012, United States </p>
-            </div>
+        <div class="contact-info">
+            <div>
+                <div class="brand-logo">GoodsPacker<span>.</span></div>
+                
+                <div class="info-header">
+                    <h1>Let's get moving.</h1>
+                    <p>Ready to make your move? Whether you're planning a new relocation or need an update on an ongoing transit, our logistics experts are here to help. We guarantee a response within 60 minutes.</p>
+                </div>
 
-            <div class="info-block">
-                <strong>📞 24/7 Helpline</strong>
-                <p>+1 (873) 123-4567<br><span style="font-size: 13px; color: #888;">(Available for calls & WhatsApp)</span></p>
-            </div>
+                <div class="info-details">
+                    <div class="info-item">
+                        <div class="icon">📍</div>
+                        <div class="text-wrap">
+                            <h4>Corporate Headquarters</h4>
+                            <p>70 Washington Square South,<br>New York, NY 10012, USA</p>
+                        </div>
+                    </div>
 
-            <div class="info-block">
-                <strong>✉️ Email Support</strong>
-                <p>support@goodspacker.com<br>quotes@goodspacker.com</p>
-            </div>
+                    <div class="info-item">
+                        <div class="icon">📞</div>
+                        <div class="text-wrap">
+                            <h4>24/7 Priority Helpline</h4>
+                            <p>+1 (873) 123-4567<br><em>(Calls & WhatsApp Support)</em></p>
+                        </div>
+                    </div>
 
-            <div class="info-block">
-                <strong>🕒 Operating Hours</strong>
-                <p>Mon - Sat: 8:00 AM – 9:00 PM<br>Sunday: 10:00 AM – 4:00 PM</p>
+                    <div class="info-item">
+                        <div class="icon">✉️</div>
+                        <div class="text-wrap">
+                            <h4>Digital Support</h4>
+                            <p>support@goodspacker.com<br>quotes@goodspacker.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">🕒</div>
+                        <div class="text-wrap">
+                            <h4>Operating Hours</h4>
+                            <p>Mon - Sat: 8:00 AM – 9:00 PM<br>Sunday: 10:00 AM – 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="btn-wrapper">
-            <a href="index.html" class="back-btn">← Return to Homepage</a>
+        <div class="contact-form-section">
+            <h2>Send us a Message</h2>
+            <form onsubmit="event.preventDefault(); alert('Message sent successfully! The GoodsPacker team will be in touch shortly.');">
+                
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group" style="display: flex; gap: 15px;">
+                    <div style="flex: 1;">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="you@example.com" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+1 (XXX) XXX-XXXX">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>How can we help?</label>
+                    <textarea placeholder="Describe your moving requirements or query here..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+                
+                <a href="index.html" class="back-link">← Return to Homepage</a>
+            </form>
         </div>
+
     </div>
 
 </body>
-
 </html>

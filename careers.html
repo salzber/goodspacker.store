@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | GoodsPacker</title>
+    <style>
+        /* Modern Reset & Variables */
+        :root {
+            --primary: #1A237E; /* Deep Navy */
+            --accent: #FF7043; /* Coral */
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-page: #F4F7F6;
+            --white: #FFFFFF;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+        body { background-color: var(--bg-page); color: var(--text-dark); line-height: 1.7; }
+        a { text-decoration: none; }
+        .wrapper { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation Bar */
+        header { background: var(--white); padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .brand { font-size: 26px; font-weight: 900; color: var(--primary); letter-spacing: -0.5px; }
+        .brand span { color: var(--accent); }
+        .back-home { font-weight: 600; color: var(--text-light); transition: 0.3s; }
+        .back-home:hover { color: var(--primary); }
+
+        /* Hero Banner */
+        .career-hero { 
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.95) 0%, rgba(13, 18, 64, 0.95) 100%), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80') center/cover;
+            padding: 100px 0; 
+            color: var(--white); 
+            text-align: center; 
+        }
+        .career-hero h1 { font-size: 48px; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; }
+        .career-hero p { font-size: 18px; max-width: 700px; margin: 0 auto 30px; color: rgba(255,255,255,0.85); }
+        .hero-btn { display: inline-block; background: var(--accent); color: var(--white); padding: 14px 30px; border-radius: 50px; font-weight: bold; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 112, 67, 0.3); }
+        .hero-btn:hover { background: #F4511E; transform: translateY(-3px); }
+
+        /* Perks Section */
+        .perks-section { padding: 80px 0; background: var(--white); text-align: center; }
+        .section-title { font-size: 32px; color: var(--primary); margin-bottom: 15px; }
+        .section-subtitle { color: var(--text-light); margin-bottom: 50px; }
+        .perks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .perk-card { padding: 30px; border-radius: 12px; background: var(--bg-page); transition: 0.3s; }
+        .perk-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .perk-icon { font-size: 36px; margin-bottom: 15px; }
+        .perk-card h4 { font-size: 18px; color: var(--primary); margin-bottom: 10px; }
+        .perk-card p { font-size: 14px; color: var(--text-light); }
+
+        /* Open Roles */
+        .jobs-section { padding: 80px 0; background: var(--bg-page); }
+        .job-list { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
+        .job-card { background: var(--white); padding: 30px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border-left: 4px solid var(--primary); transition: 0.3s; }
+        .job-card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-left-color: var(--accent); }
+        .job-info h3 { font-size: 20px; color: var(--primary); margin-bottom: 8px; }
+        .job-meta { display: flex; gap: 15px; font-size: 14px; color: var(--text-light); font-weight: 500; }
+        .job-meta span { display: flex; align-items: center; gap: 5px; }
+        .apply-btn { background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 10px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .apply-btn:hover { background: var(--primary); color: var(--white); }
+
+        /* Application Form Section */
+        .apply-section { padding: 80px 0; background: var(--white); }
+        .apply-form { max-width: 700px; margin: 0 auto; background: var(--bg-page); padding: 40px; border-radius: 12px; }
+        .apply-form h3 { font-size: 24px; color: var(--primary); margin-bottom: 25px; text-align: center; }
+        .form-row { display: flex; gap: 20px; margin-bottom: 20px; }
+        .form-group { flex: 1; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-light); text-transform: uppercase; margin-bottom: 8px; }
+        .form-group input, .form-group select { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; background: var(--white); transition: 0.3s; }
+        .form-group input:focus, .form-group select:focus { border-color: var(--primary); outline: none; }
+        .file-upload { border: 2px dashed #ccc; padding: 20px; text-align: center; border-radius: 8px; background: var(--white); cursor: pointer; margin-bottom: 25px; transition: 0.3s; }
+        .file-upload:hover { border-color: var(--primary); background: #f0f4f8; }
+        .submit-btn { width: 100%; background: var(--primary); color: var(--white); border: none; padding: 16px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #121858; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(26, 35, 126, 0.2); }
+
+        @media (max-width: 768px) {
+            .form-row { flex-direction: column; gap: 0; }
+            .job-card { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .apply-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="wrapper header-content">
+            <div class="brand">GoodsPacker<span>.</span></div>
+            <a href="index.html" class="back-home">← Return Home</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="career-hero">
+        <div class="wrapper">
+            <h1>Drive Your Career Forward.</h1>
+            <p>Join a fast-growing team of logistics experts, tech innovators, and customer success champions. At GoodsPacker, we don't just move boxes—we move careers.</p>
+            <a href="#open-roles" class="hero-btn">View Open Positions</a>
+        </div>
+    </section>
+
+    <!-- Perks Section -->
+    <section class="perks-section">
+        <div class="wrapper">
+            <h2 class="section-title">Why Work With Us?</h2>
+            <p class="section-subtitle">We invest in our people because they are the engine of our success.</p>
+            
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon">🏥</div>
+                    <h4>Comprehensive Healthcare</h4>
+                    <p>Full medical, dental, and vision coverage for you and your dependents from day one.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">📈</div>
+                    <h4>Rapid Growth</h4>
+                    <p>We promote from within. Get access to paid upskilling courses and leadership tracks.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">⚖️</div>
+                    <h4>Work-Life Balance</h4>
+                    <p>Generous paid time off, flexible scheduling, and remote options for corporate roles.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">🎉</div>
+                    <h4>Team Culture</h4>
+                    <p>Monthly team outings, annual retreats, and a highly collaborative, inclusive environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section class="jobs-section" id="open-roles">
+        <div class="wrapper">
+            <h2 class="section-title" style="text-align: center;">Current Openings</h2>
+            <p class="section-subtitle" style="text-align: center;">Find the role that fits your passion and skills.</p>
+            
+            <div class="job-list">
+                <!-- Job 1 -->
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Logistics Coordinator</h3>
+                        <div class="job-meta">
+                            <span>📍 New York, NY</span>
+                            <span>💼 Full-Time</span>
+                            <span>🏢 Operations</span>
+                        </div>
+                    </div>
+                    <button class="apply-btn" onclick="document.getElementById('role-select').value='coordinator'; document.getElementById('apply').scrollIntoView({behavior: 'smooth'});">Apply Now</button>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Fleet Operations Manager</h3>
+                        <div class="job-meta">
+                            <span>📍 Chicago, IL</span>
+                            <span>💼 Full-Time</span>
+                            <span>🏢 Management</span>
+                        </div>
+                    </div>
+                    <button class="apply-btn" onclick="document.getElementById('role-select').value='manager'; document.getElementById('apply').scrollIntoView({behavior: 'smooth'});">Apply Now</button>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Customer Success Specialist</h3>
+                        <div class="job-meta">
+                            <span>📍 Remote (USA)</span>
+                            <span>💼 Full-Time</span>
+                            <span>🏢 Support</span>
+                        </div>
+                    </div>
+                    <button class="apply-btn" onclick="document.getElementById('role-select').value='support'; document.getElementById('apply').scrollIntoView({behavior: 'smooth'});">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="apply-section" id="apply">
+        <div class="wrapper">
+            <div class="apply-form">
+                <h3>Submit Your Application</h3>
+                <form onsubmit="event.preventDefault(); alert('Thank you for applying! Your application has been received by our HR team. We will review your profile and get back to you shortly.');">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label>Select Role</label>
+                        <select id="role-select" required>
+                            <option value="" disabled selected>Which role are you applying for?</option>
+                            <option value="coordinator">Logistics Coordinator</option>
+                            <option value="manager">Fleet Operations Manager</option>
+                            <option value="support">Customer Success Specialist</option>
+                            <option value="other">General Application / Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label>LinkedIn Profile URL (Optional)</label>
+                        <input type="url" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+
+                    <div class="file-upload">
+                        <label for="resume" style="cursor: pointer; color: var(--primary); font-weight: bold;">
+                            📄 Click to Upload Resume (PDF or DOCX)
+                        </label>
+                        <input type="file" id="resume" accept=".pdf,.doc,.docx" required style="display: none;" onchange="alert('File attached: ' + this.files[0].name)">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

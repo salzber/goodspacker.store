@@ -3,313 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoodsPacker Logistics | Expert Packers & Movers</title>
+    <title>GoodsPacker Relocations | Premium Packers & Movers</title>
     <style>
-        /* Base Resets */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { color: #333; line-height: 1.6; background-color: #f4f7f6; }
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-        
-        /* Header & Toggle Navbar */
-        header { background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 999; border-bottom: 3px solid #0056b3; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; position: relative; }
-        .logo { font-size: 28px; font-weight: 800; color: #0056b3; text-transform: uppercase; letter-spacing: 1px; }
-        .logo span { color: #ff9800; }
-        
-        .nav-links { list-style: none; display: flex; align-items: center; transition: 0.3s ease-in-out; }
-        .nav-links li { margin-left: 30px; }
-        .nav-links a { text-decoration: none; color: #444; font-weight: 600; font-size: 16px; transition: color 0.3s; }
-        .nav-links a:hover { color: #0056b3; }
-        .call-btn { background: #ff5722; color: white !important; padding: 10px 20px; border-radius: 5px; box-shadow: 0 4px 6px rgba(255, 87, 34, 0.2); }
-        .call-btn:hover { background: #e64a19; }
-
-        /* Hamburger Icon */
-        .menu-toggle { display: none; font-size: 28px; cursor: pointer; color: #0056b3; }
-
-        /* Responsive Navbar */
-        @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            .nav-links { 
-                display: none; 
-                flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background: #ffffff; 
-                padding: 20px 0; 
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-                border-top: 1px solid #ddd;
-            }
-            .nav-links.active { display: flex; }
-            .nav-links li { margin: 15px 0; text-align: center; }
+        /* Modern CSS Reset & Variables */
+        :root {
+            --primary: #1A237E; /* Deep Navy */
+            --accent: #FF7043; /* Coral */
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-gray: #F4F7F6;
+            --white: #FFFFFF;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        /* Hero Section */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+        body { background-color: var(--bg-gray); color: var(--text-dark); line-height: 1.7; }
+        .wrapper { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Typography */
+        h1, h2, h3, h4 { color: var(--primary); font-weight: 700; }
+        a { text-decoration: none; transition: 0.3s ease; }
+
+        /* --- Header & Navbar --- */
+        header { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .brand { font-size: 26px; font-weight: 900; color: var(--primary); letter-spacing: -0.5px; }
+        .brand span { color: var(--accent); }
+        
+        .nav-menu { list-style: none; display: flex; align-items: center; gap: 35px; }
+        .nav-menu a { color: var(--text-dark); font-weight: 500; font-size: 15px; }
+        .nav-menu a:hover { color: var(--accent); }
+        .btn-cta { background: var(--accent); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600; box-shadow: 0 4px 15px rgba(255, 112, 67, 0.3); }
+        .btn-cta:hover { background: #F4511E; transform: translateY(-2px); }
+
+        .mobile-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--primary); }
+
+        /* --- Hero Section (Glassmorphism) --- */
         .hero { 
-            background: linear-gradient(rgba(244, 247, 246, 0.9), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80') no-repeat center center/cover;
-            padding: 80px 0;
+            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80') center/cover no-repeat; 
+            padding: 100px 0; 
+            position: relative;
         }
-        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
-        .hero-text h1 { font-size: 46px; color: #111; margin-bottom: 20px; font-weight: 900; line-height: 1.1; }
-        .hero-text p { font-size: 18px; color: #555; margin-bottom: 30px; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(26, 35, 126, 0.9) 0%, rgba(26, 35, 126, 0.6) 100%); }
+        .hero-content { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
         
-        .badges { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
-        .badge-item { background: #e3f2fd; color: #0056b3; padding: 8px 15px; font-size: 14px; font-weight: 700; border-radius: 30px; }
+        .hero-text { flex: 1; min-width: 300px; color: var(--white); }
+        .hero-text h1 { font-size: 50px; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+        .hero-text p { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 30px; }
+        .trust-tags { display: flex; gap: 15px; flex-wrap: wrap; }
+        .trust-tags span { background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); padding: 8px 16px; border-radius: 4px; font-size: 14px; border: 1px solid rgba(255,255,255,0.3); }
 
-        /* Form Box */
-        .form-box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-top: 5px solid #0056b3; }
-        .form-box h3 { margin-bottom: 25px; font-size: 24px; color: #222; text-align: center; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #444; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 15px; transition: 0.3s; }
-        .form-group input:focus, .form-group select:focus { border-color: #0056b3; outline: none; }
-        .btn { background-color: #0056b3; color: white; padding: 14px 30px; font-size: 18px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; width: 100%; transition: background 0.3s; }
-        .btn:hover { background-color: #004494; }
+        /* Hero Form */
+        .quote-form { flex: 0.8; min-width: 320px; background: rgba(255, 255, 255, 0.95); padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .quote-form h3 { font-size: 22px; margin-bottom: 20px; text-align: center; color: var(--primary); }
+        .input-box { margin-bottom: 15px; }
+        .input-box label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--text-light); text-transform: uppercase; }
+        .input-box input, .input-box select { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 15px; background: var(--bg-gray); transition: 0.3s; }
+        .input-box input:focus, .input-box select:focus { border-color: var(--primary); background: var(--white); outline: none; }
+        .submit-btn { width: 100%; background: var(--primary); color: var(--white); padding: 15px; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+        .submit-btn:hover { background: #121858; }
 
-        @media (max-width: 992px) { .hero-grid { grid-template-columns: 1fr; } }
-
-        /* Why Choose Us Section */
-        .features { padding: 90px 0; background: white; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 36px; color: #111; margin-bottom: 15px; }
-        .section-header p { color: #666; font-size: 17px; max-width: 750px; margin: 0 auto; }
+        /* --- Services/Features (Cards Layout) --- */
+        .services { padding: 100px 0; background: var(--white); text-align: center; }
+        .sec-title { font-size: 36px; margin-bottom: 15px; }
+        .sec-subtitle { color: var(--text-light); font-size: 16px; max-width: 600px; margin: 0 auto 50px; }
         
-        .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; align-items: center; }
-        .feature-row.reverse { direction: rtl; }
-        .feature-row.reverse .text-content { direction: ltr; }
-        .feature-row img { width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
-        .feature-row h3 { font-size: 26px; margin-bottom: 15px; color: #0056b3; }
-        .feature-row p { font-size: 16px; color: #555; margin-bottom: 15px; line-height: 1.8; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .srv-card { padding: 40px 30px; background: var(--bg-gray); border-radius: 12px; transition: 0.3s; text-align: left; border-bottom: 4px solid transparent; }
+        .srv-card:hover { transform: translateY(-5px); background: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-bottom-color: var(--accent); }
+        .icon-wrap { font-size: 40px; margin-bottom: 20px; }
+        .srv-card h4 { font-size: 20px; margin-bottom: 10px; }
+        .srv-card p { color: var(--text-light); font-size: 15px; }
 
+        /* --- Pricing Table --- */
+        .pricing { padding: 100px 0; background: #F8F9FC; }
+        .price-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .prc-card { background: var(--white); width: 340px; border-radius: 12px; padding: 40px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .prc-card.featured { transform: scale(1.05); border: 2px solid var(--primary); position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .ribbon { position: absolute; top: 0; right: 0; background: var(--accent); color: var(--white); font-size: 12px; font-weight: bold; padding: 5px 15px; border-bottom-left-radius: 12px; border-top-right-radius: 10px; }
+        .prc-card h4 { font-size: 20px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .prc-amount { font-size: 40px; font-weight: 900; color: var(--primary); margin-bottom: 25px; }
+        .prc-amount span { font-size: 18px; color: var(--text-light); font-weight: 400; }
+        .prc-card ul { list-style: none; margin-bottom: 30px; text-align: left; padding-left: 20px; }
+        .prc-card ul li { margin-bottom: 15px; font-size: 15px; color: var(--text-dark); position: relative; }
+        .prc-card ul li::before { content: '✓'; color: var(--accent); font-weight: bold; position: absolute; left: -20px; }
+
+        /* --- Interactive FAQs --- */
+        .faq { padding: 100px 0; background: var(--white); }
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        details { background: var(--bg-gray); margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: 0.3s; }
+        summary { padding: 20px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--primary); }
+        summary::after { content: '+'; font-size: 20px; font-weight: bold; color: var(--accent); transition: transform 0.3s; }
+        details[open] summary::after { transform: rotate(45deg); }
+        .faq-content { padding: 0 20px 20px; color: var(--text-light); font-size: 15px; border-top: 1px solid #ddd; margin-top: 10px; padding-top: 15px; }
+
+        /* --- Footer --- */
+        footer { background: #111520; color: #8C94A4; padding: 70px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .ft-logo { font-size: 24px; color: var(--white); font-weight: bold; margin-bottom: 15px; display: block; }
+        .ft-logo span { color: var(--accent); }
+        .ft-links h5 { color: var(--white); font-size: 16px; margin-bottom: 20px; text-transform: uppercase; }
+        .ft-links ul { list-style: none; }
+        .ft-links li { margin-bottom: 10px; }
+        .ft-links a { color: #8C94A4; font-size: 14px; }
+        .ft-links a:hover { color: var(--accent); }
+        .bottom-bar { border-top: 1px solid #2A3143; padding-top: 20px; text-align: center; font-size: 13px; }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .feature-row { grid-template-columns: 1fr; gap: 30px; margin-bottom: 50px; }
-            .feature-row.reverse { direction: ltr; }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); padding: 20px 0; border-top: 1px solid #eee; box-shadow: 0 10px 10px rgba(0,0,0,0.05); }
+            .nav-menu.active { display: flex; }
+            .mobile-toggle { display: block; }
+            .hero-text h1 { font-size: 36px; }
+            .prc-card.featured { transform: scale(1); }
         }
-
-        /* Pricing Section */
-        .pricing-section { padding: 90px 0; background: #f4f7f6; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .pack-card { background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 40px 30px; text-align: center; transition: transform 0.3s; }
-        .pack-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .pack-card.popular { border: 2px solid #0056b3; position: relative; }
-        .badge { background: #0056b3; color: white; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; font-size: 13px; font-weight: bold; border-radius: 20px; text-transform: uppercase; }
-        .pack-card h4 { font-size: 22px; margin-bottom: 15px; color: #333; }
-        .pack-card .price { font-size: 32px; font-weight: 900; color: #111; margin-bottom: 20px; }
-        .pack-card ul { list-style: none; text-align: left; margin-bottom: 30px; color: #555; font-size: 15px; }
-        .pack-card ul li { margin-bottom: 12px; position: relative; padding-left: 25px; }
-        .pack-card ul li::before { content: "✔"; color: #4caf50; position: absolute; left: 0; font-weight: bold; }
-
-        /* FAQ Section */
-        .faq-section { padding: 90px 0; background: white; }
-        .faq-box { background: #fdfdfd; border: 1px solid #eaeaea; padding: 25px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
-        .faq-box h4 { font-size: 18px; color: #222; margin-bottom: 10px; }
-        .faq-box p { font-size: 15px; color: #666; }
-
-        /* Footer */
-        footer { background: #1a1a1a; color: #ddd; padding: 60px 0 30px; text-align: center; }
-        .footer-nav { margin-bottom: 30px; }
-        .footer-nav a { color: #aaa; text-decoration: none; margin: 0 15px; font-size: 15px; transition: color 0.3s; }
-        .footer-nav a:hover { color: #fff; }
-        .copyright { font-size: 14px; color: #777; margin-bottom: 15px; }
-        .legal-note { font-size: 12px; color: #555; border-top: 1px solid #333; padding-top: 20px; max-width: 800px; margin: 0 auto; }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">GoodsPacker<span>.</span></div>
-                
-                <!-- Hamburger Icon -->
-                <div class="menu-toggle" id="mobile-menu">
-                    ☰
-                </div>
-
-                <ul class="nav-links" id="nav-list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#features">How We Work</a></li>
-                    <li><a href="#plans">Moving Estimates</a></li>
-                    <li><a href="#faqs">Support & FAQs</a></li>
-                    <li><a href="#" class="call-btn">Request Quote</a></li>
-                </ul>
-            </nav>
+        <div class="wrapper nav-container">
+            <div class="brand">GoodsPacker<span>.</span></div>
+            <div class="mobile-toggle" id="menuBtn">☰</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Our Approach</a></li>
+                <li><a href="#pricing">Packages</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li><a href="contact.html" class="btn-cta">Book Now</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Area -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <span style="color: #0056b3; font-weight: 700; text-transform: uppercase; font-size: 15px; letter-spacing: 1px;">Top-Rated Moving Experts</span>
-                    <h1>Seamless & Secure Relocation Services.</h1>
-                    <p>Moving doesn't have to be a headache. Whether you are shifting homes, upgrading offices, or transporting vehicles, GoodsPacker offers completely insured, end-to-end packing and moving solutions tailored to your schedule.</p>
-                    <div class="badges">
-                        <div class="badge-item">✔ 100% Damage Protection</div>
-                        <div class="badge-item">✔ Zero Hidden Costs</div>
-                        <div class="badge-item">✔ 4.9/5 Client Rating</div>
+        <div class="wrapper hero-content">
+            <div class="hero-text">
+                <h1>Your Journey to a New Home, Stress-Free.</h1>
+                <p>We redefine moving. Whether it’s a residential shift, an office relocation, or vehicle transport, experience flawless packing and timely delivery by verified professionals.</p>
+                <div class="trust-tags">
+                    <span>🛡️ 100% Insured Transit</span>
+                    <span>⏱️ On-Time Guarantee</span>
+                    <span>⭐ 4.9/5 Customer Rating</span>
+                </div>
+            </div>
+            
+            <div class="quote-form">
+                <h3>Get a Free Estimate</h3>
+                <form onsubmit="event.preventDefault(); alert('Success! Your estimate request has been sent to our dispatch team.');">
+                    <div class="input-box">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="John Doe" required>
                     </div>
+                    <div class="input-box">
+                        <label>Mobile Number</label>
+                        <input type="tel" placeholder="+91 XXXXX XXXXX" required pattern="[0-9]{10}">
+                    </div>
+                    <div class="input-box">
+                        <label>Service Required</label>
+                        <select required>
+                            <option value="" disabled selected>Choose a category</option>
+                            <option value="residential">House Shifting</option>
+                            <option value="commercial">Office Relocation</option>
+                            <option value="vehicle">Car / Bike Transport</option>
+                        </select>
+                    </div>
+                    <div class="input-box" style="display: flex; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label>Moving From</label>
+                            <input type="text" placeholder="Origin City" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <label>Moving To</label>
+                            <input type="text" placeholder="Destination City" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Calculate Cost</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / How We Work -->
+    <section class="services" id="services">
+        <div class="wrapper">
+            <h2 class="sec-title">Why GoodsPacker stands out</h2>
+            <p class="sec-subtitle">We don't just move boxes; we handle your memories and assets with uncompromising care and modern technology.</p>
+            
+            <div class="service-grid">
+                <div class="srv-card">
+                    <div class="icon-wrap">📦</div>
+                    <h4>Military-Grade Packing</h4>
+                    <p>We utilize 5-ply corrugated sheets, commercial bubble wrap, and specialized wooden crating for fragile electronics and artwork to ensure absolute zero-damage transit.</p>
+                </div>
+                <div class="srv-card">
+                    <div class="icon-wrap">📍</div>
+                    <h4>Live GPS Tracking</h4>
+                    <p>Never wonder where your belongings are. Our entire fleet is equipped with real-time telematics. You get a live tracking link straight to your mobile phone.</p>
+                </div>
+                <div class="srv-card">
+                    <div class="icon-wrap">🧑‍🔧</div>
+                    <h4>Vetted Professional Crew</h4>
+                    <p>No untrained labor. Our packers and drivers undergo rigorous background checks and mandatory handling training before they step foot into your property.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="wrapper text-center">
+            <h2 class="sec-title" style="text-align: center;">Transparent Moving Packages</h2>
+            <p class="sec-subtitle" style="text-align: center; margin-bottom: 50px;">Flat-rate starting prices. Zero hidden fees. Choose the tier that matches your inventory.</p>
+            
+            <div class="price-grid">
+                <!-- Card 1 -->
+                <div class="prc-card">
+                    <h4>Studio / 1 BHK</h4>
+                    <div class="prc-amount">$4,500<span> /onwards</span></div>
+                    <ul>
+                        <li>Ideal for bachelors & small spaces</li>
+                        <li>1 Mini-Truck Allocation</li>
+                        <li>3 Packing Specialists</li>
+                        <li>Standard Wrapping Materials</li>
+                    </ul>
                 </div>
                 
-                <!-- Form Box -->
-                <div class="form-box">
-                    <h3>Get Your Free Moving Quote</h3>
-                    <form onsubmit="event.preventDefault(); alert('Your request has been securely submitted. Our team will contact you shortly!');">
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
-                        </div>
-                        <div class="form-group">
-                            <label>What are you moving?</label>
-                            <select required>
-                                <option value="" disabled selected>Select Requirement</option>
-                                <option value="home">Household Goods</option>
-                                <option value="corporate">Office / Corporate Setup</option>
-                                <option value="auto">Car / Two-Wheeler Transport</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>From (Current Location)</label>
-                            <input type="text" placeholder="Pickup City or Area" required>
-                        </div>
-                        <div class="form-group">
-                            <label>To (Destination)</label>
-                            <input type="text" placeholder="Drop City or Area" required>
-                        </div>
-                        <button type="submit" class="btn">Calculate My Cost</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Trust GoodsPacker With Your Move?</h2>
-                <p>We treat your belongings as if they were our own. Our rigorous safety protocols and premium packing techniques ensure a flawless transition from your old doorstep to the new.</p>
-            </div>
-            
-            <div class="feature-row">
-                <div class="text-content">
-                    <h3>1. Heavy-Duty 5-Layer Protection</h3>
-                    <p>Forget cheap, flimsy cardboard. Our professional packing crew uses industry-grade 5-layer corrugated sheets, shock-absorbent bubble wraps, and moisture-resistant stretch films to safeguard your items.</p>
-                    <p>For highly fragile items like glassware, artwork, and expensive electronics, we build custom wooden crates. Furthermore, our loaders are trained in spatial optimization to prevent any friction inside the cargo holds during transit.</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600&q=80" alt="Advanced Packaging Materials">
-                </div>
-            </div>
-
-            <div class="feature-row reverse">
-                <div class="text-content">
-                    <h3>2. 24/7 Live Tracking & Verified Crew</h3>
-                    <p>Stay informed every step of the way. All GoodsPacker trucks are fitted with state-of-the-art GPS systems. You will receive an instant tracking link via WhatsApp so you know exactly where your belongings are at any given moment.</p>
-                    <p>Safety starts with the right people. Our drivers and handlers undergo stringent background verifications and extensive driving capability tests to ensure smooth sailing across state lines.</p>
-                </div>
-                <div>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNhyCkrwWsDaMZkWrFirkO0t-7b2ubdaf9jWsUARZ0geBp-LrtWpld4zH6&s=10" alt="Secure Transportation Fleet">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing-section" id="plans">
-        <div class="container">
-            <div class="section-header">
-                <h2>Upfront & Transparent Estimates</h2>
-                <p>We believe in honest pricing. Explore our standard baseline estimates below to get an idea of your moving costs. No last-minute surprises!</p>
-            </div>
-            
-            <div class="pricing-grid">
-                <div class="pack-card">
-                    <h4>1 BHK Relocation</h4>
-                    <div class="price">$4,500 - $7,000</div>
+                <!-- Card 2 -->
+                <div class="prc-card featured">
+                    <div class="ribbon">MOST POPULAR</div>
+                    <h4>Standard 2 BHK</h4>
+                    <div class="prc-amount">$7,500<span> /onwards</span></div>
                     <ul>
-                        <li>Perfect for studio & 1BHK apartments</li>
-                        <li>1 Standard Transport Vehicle</li>
-                        <li>3 Packing & Loading Experts</li>
-                        <li>Basic Dismantling & Wrapping</li>
+                        <li>Perfect for nuclear families</li>
+                        <li>1 Large Container Truck</li>
+                        <li>4-5 Experienced Movers</li>
+                        <li>Premium Multi-Layer Packing</li>
+                        <li>Free Basic Furniture Dismantling</li>
                     </ul>
                 </div>
-                <div class="pack-card popular">
-                    <div class="badge">Highly Requested</div>
-                    <h4>2 BHK Relocation</h4>
-                    <div class="price">$7,500 - $12,000</div>
+
+                <!-- Card 3 -->
+                <div class="prc-card">
+                    <h4>3 BHK & Villas</h4>
+                    <div class="prc-amount">$12,000<span> /onwards</span></div>
                     <ul>
-                        <li>Best for standard nuclear families</li>
-                        <li>1 Heavy-Duty Closed Container</li>
-                        <li>4 Experienced Moving Pros</li>
-                        <li>Premium Multi-Layer Packaging</li>
-                    </ul>
-                </div>
-                <div class="pack-card">
-                    <h4>3+ BHK / Villa Relocation</h4>
-                    <div class="price">Starting $13,000</div>
-                    <ul>
-                        <li>Designed for large homes and villas</li>
-                        <li>Dedicated Multi-Truck Fleet</li>
-                        <li>6+ Specialized Packers</li>
+                        <li>For large estates & heavy inventories</li>
+                        <li>Multiple Dedicated Vehicles</li>
+                        <li>6+ Expert Crew Members</li>
                         <li>Custom Wooden Crating Included</li>
+                        <li>Unpacking & Setup Assistance</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section" id="faqs">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <h2>Got Questions? We've Got Answers.</h2>
-                <p>Find out more about how we simplify the relocation process for you.</p>
-            </div>
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="wrapper">
+            <h2 class="sec-title" style="text-align: center;">Frequently Asked Questions</h2>
+            <p class="sec-subtitle" style="text-align: center; margin-bottom: 40px;">Clear answers to help you plan your relocation better.</p>
             
-            <div class="faq-box">
-                <h4>Will I be asked to pay unexpected fees on the day of the move?</h4>
-                <p>Never. The quotation we provide after finalizing your inventory is completely binding. Additional charges will only apply if you significantly increase the number of items or add unnotified drop-off locations mid-transit.</p>
-            </div>
-            <div class="faq-box">
-                <h4>Is there financial protection if something breaks?</h4>
-                <p>Yes, we offer comprehensive transit insurance at a very nominal premium. In the rare event of unforeseen accidents on the highway, your goods are completely covered, and our dedicated support team will help you settle claims swiftly.</p>
-            </div>
-            <div class="faq-box">
-                <h4>How early should I book my relocation slot?</h4>
-                <p>To ensure availability, especially during month-ends or weekends, we strongly advise booking your move at least 4 to 7 days in advance. This gives us ample time to arrange the perfect vehicle and packing crew for your requirements.</p>
+            <div class="faq-list">
+                <details>
+                    <summary>Are there any hidden charges on moving day?</summary>
+                    <div class="faq-content">Absolutely not. The estimate provided to you after the virtual or physical survey is final. Charges only alter if you add unnotified items or extra drop-off locations on the day of the move.</div>
+                </details>
+                <details>
+                    <summary>Do you provide insurance for my belongings?</summary>
+                    <div class="faq-content">Yes! We offer a comprehensive transit insurance policy at a minimal premium (typically 1.5% to 3% of declared value). If an unforeseen accident occurs, you are fully covered for damages.</div>
+                </details>
+                <details>
+                    <summary>How far in advance should I book my move?</summary>
+                    <div class="faq-content">For smooth scheduling, we recommend booking at least 7-10 days in advance. However, for month-end dates which are incredibly busy, a 15-day prior notice is highly recommended.</div>
+                </details>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="contact.html">Contact Us</a>
+        <div class="wrapper">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="ft-logo">GoodsPacker<span>.</span></a>
+                    <p style="margin-top: 15px; font-size: 14px;">Delivering peace of mind, one box at a time. The nation's most trusted logistics partner.</p>
+                </div>
+                <div class="ft-links">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="ft-links">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="claims.html">Claim Settlement</a></li>
+                    </ul>
+                </div>
             </div>
-            <p class="copyright">© 2026 GoodsPacker Logistics Pvt. Ltd. All Rights Reserved.</p>
-            <p class="legal-note">Disclaimer: The estimates provided are indicative. Final moving charges may vary based on actual distance, current toll rates, season variations, and exact inventory size. GoodsPacker and its logo are registered trademarks.</p>
+            <div class="bottom-bar">
+                © 2026 GoodsPacker Relocations Pvt. Ltd. All rights reserved. <br>
+                <span style="font-size: 11px; color: #555;">Pricing is indicative and subject to change based on exact inventory, distance, and toll fluctuations.</span>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- Mobile Menu Script -->
     <script>
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            var navList = document.getElementById('nav-list');
-            navList.classList.toggle('active');
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
         });
     </script>
-
 </body>
 </html>

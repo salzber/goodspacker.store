@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File a Claim | GoodsPacker</title>
+    <style>
+        :root {
+            --primary: #1A237E;
+            --accent: #FF7043;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-page: #F4F7F6;
+            --white: #FFFFFF;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+        body { background-color: var(--bg-page); color: var(--text-dark); line-height: 1.6; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px 20px; }
+
+        .claim-wrapper { background-color: var(--white); width: 100%; max-width: 1000px; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); display: flex; overflow: hidden; }
+
+        /* Left Side */
+        .claim-info { background: linear-gradient(135deg, var(--primary) 0%, #121858 100%); color: var(--white); padding: 50px; width: 45%; display: flex; flex-direction: column; justify-content: center; }
+        .claim-info h1 { font-size: 32px; margin-bottom: 15px; font-weight: 700; }
+        .claim-info p { font-size: 15px; color: rgba(255, 255, 255, 0.8); margin-bottom: 40px; line-height: 1.8; }
+        
+        .steps { display: flex; flex-direction: column; gap: 20px; }
+        .step-item { display: flex; align-items: flex-start; gap: 15px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .step-num { background: var(--accent); color: var(--white); width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+        .step-text h4 { font-size: 16px; margin-bottom: 5px; }
+        .step-text p { font-size: 13px; color: rgba(255,255,255,0.7); margin: 0; }
+
+        /* Right Side Form */
+        .form-section { padding: 50px; width: 55%; background: var(--white); }
+        .form-section h2 { font-size: 26px; color: var(--primary); margin-bottom: 25px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-light); text-transform: uppercase; margin-bottom: 8px; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; background: #FAFAFA; transition: all 0.3s ease; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--primary); background: var(--white); outline: none; box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        
+        .submit-btn { background-color: var(--accent); color: var(--white); border: none; padding: 16px 30px; font-size: 16px; font-weight: 700; border-radius: 8px; cursor: pointer; width: 100%; transition: 0.3s; margin-bottom: 20px; }
+        .submit-btn:hover { background-color: #F4511E; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 112, 67, 0.3); }
+        .back-link { display: block; text-align: center; text-decoration: none; color: var(--text-light); font-weight: 500; font-size: 14px; transition: color 0.3s; }
+        .back-link:hover { color: var(--primary); }
+
+        @media (max-width: 850px) { .claim-wrapper { flex-direction: column; } .claim-info, .form-section { width: 100%; padding: 40px 30px; } }
+    </style>
+</head>
+<body>
+    <div class="claim-wrapper">
+        <div class="claim-info">
+            <h1>Hassle-Free Claims.</h1>
+            <p>Accidents are rare, but we are prepared for them. If your items suffered damage during transit and you opted for insurance, our dedicated claims team will resolve your issue promptly.</p>
+            
+            <div class="steps">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <h4>Submit Details</h4>
+                        <p>Fill out the form with your valid Booking/Invoice ID.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <h4>Survey & Verification</h4>
+                        <p>Our surveyor will assess the damage via images or a physical visit.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <h4>Settlement</h4>
+                        <p>Approved claims are directly credited to your bank account within 7-10 working days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Initiate a Claim</h2>
+            <form onsubmit="event.preventDefault(); alert('Claim submitted successfully. Your Claim Reference Number is #GP-8492. Our team will contact you within 24 hours.');">
+                
+                <div class="form-group" style="display: flex; gap: 15px;">
+                    <div style="flex: 1;">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Registered Name" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label>Booking ID / Invoice ID</label>
+                        <input type="text" placeholder="e.g., GP-2026-XXXX" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Nature of Damage</label>
+                    <select required>
+                        <option value="" disabled selected>Select an issue</option>
+                        <option value="furniture">Furniture Scratches/Breakage</option>
+                        <option value="electronics">Electronic Malfunction (Transit induced)</option>
+                        <option value="missing">Missing Box/Item</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Detailed Description</label>
+                    <textarea placeholder="Describe the damaged items and extent of damage..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Images (Optional for now)</label>
+                    <input type="file" accept="image/*" multiple style="padding: 10px; background: #fff;">
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Claim Request</button>
+                <a href="index.html" class="back-link">← Return to Homepage</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
